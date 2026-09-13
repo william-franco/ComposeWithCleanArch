@@ -1,6 +1,31 @@
 # Compose With Clean Arch
 
-Sample Android app listing users from the [JSONPlaceholder API](https://jsonplaceholder.typicode.com) with Jetpack Compose and Clean Architecture (domain/data/presentation layers).
+Sample Android app listing users from the [JSONPlaceholder API](https://jsonplaceholder.typicode.com) with Jetpack Compose and **Clean Architecture** per feature. Each feature splits into **presentation** (View/ViewModel), **domain** (entities, repository contracts, use cases), and **data** (models, mappers, data sources, repository implementations). Koin binds layers at compile time; settings theme updates flow through dedicated use cases and DataStore. Same JSONPlaceholder user list and detail screens as the MVVM sample, with stricter layer boundaries.
+
+## Structure
+
+```mermaid
+flowchart TB
+  subgraph presentation [presentation]
+    UserRoute --> UserViewModel
+    SettingRoute --> SettingViewModel
+  end
+  UserViewModel --> GetAllUsersUseCase
+  SettingViewModel --> UpdateThemeUseCase
+  subgraph domain [domain]
+    GetAllUsersUseCase --> UserRepositoryPort[UserRepository interface]
+    UpdateThemeUseCase --> SettingRepositoryPort[SettingRepository interface]
+  end
+  subgraph data [data]
+    UserRepositoryPort --> UserRepositoryImpl
+    UserRepositoryImpl --> UserDataSource
+    UserDataSource --> HttpService
+    SettingRepositoryPort --> SettingRepositoryImpl
+    SettingRepositoryImpl --> SettingDataSource
+    SettingDataSource --> DataStore
+  end
+  HttpService --> JSONPlaceholder[JSONPlaceholder API]
+```
 
 ## Stack
 
