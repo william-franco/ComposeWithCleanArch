@@ -1,4 +1,4 @@
-package br.com.williamfranco.composewithcleanarch.src.design.theme
+package br.com.williamfranco.composewithcleanarch.src.common.design.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

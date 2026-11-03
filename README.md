@@ -45,17 +45,18 @@ flowchart TB
 
 ## Architecture
 
-Feature-based Clean Architecture with Koin for dependency injection.
+Feature-based Clean Architecture with Koin for dependency injection. Shared code lives under `common/` (Koin modules, navigation root, design system, HTTP and connectivity services). Each module under `features/` follows the layer split shown below.
 
 ```
 src/
 ├── common/
 │   ├── constants/
+│   ├── dependency_injectors/
+│   ├── design/
+│   │   └── theme/
 │   ├── patterns/
+│   ├── routes/
 │   └── services/
-├── di/
-├── design/theme/
-├── routes/
 └── features/
     ├── users/
     │   ├── domain/

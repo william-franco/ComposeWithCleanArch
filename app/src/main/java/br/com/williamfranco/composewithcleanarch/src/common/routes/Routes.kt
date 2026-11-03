@@ -1,4 +1,4 @@
-package br.com.williamfranco.composewithcleanarch.src.routes
+package br.com.williamfranco.composewithcleanarch.src.common.routes
 
 object Routes {
     const val USERS = "users"

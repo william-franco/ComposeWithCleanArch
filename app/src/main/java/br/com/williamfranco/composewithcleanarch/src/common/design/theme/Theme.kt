@@ -1,4 +1,4 @@
-package br.com.williamfranco.composewithcleanarch.src.design.theme
+package br.com.williamfranco.composewithcleanarch.src.common.design.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

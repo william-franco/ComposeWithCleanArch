@@ -1,4 +1,4 @@
-package br.com.williamfranco.composewithcleanarch.src.di
+package br.com.williamfranco.composewithcleanarch.src.common.dependency_injectors
 
 import br.com.williamfranco.composewithcleanarch.src.common.services.ConnectionService
 import br.com.williamfranco.composewithcleanarch.src.common.services.ConnectionServiceImpl
